@@ -1,4 +1,4 @@
-<small>You're going to love this.</small>
+<small>Group: Krishna Sardana, Sanjot Singh, Saloni Shah, Sofia Fernandez Chacin, and Monica De Armas</small>
 
 ## Introduction
 
