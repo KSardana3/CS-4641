@@ -12,9 +12,11 @@ We aim to employ Machine Learning to find the ideal pair of stocks and predict t
 
 Our first method OPTICS is an unsupervised method similar to DBSCAN that will result in unique clusters of high density. This will allow us to take a large random pool of stocks and cluster them. Then, we will conduct the Augmented Dickey Fuller Test (ADF) to find the cointegration between each stock in a cluster which will allow us to determine ideal pairs. Finally, we will use the LASSO regularized regression method to predict the future spread between a pair which can be used to determine the z-score to trade on.
 
-## Potential Results
+## Results
 
-Ideal results will provide information regarding which correlated stocks are diverging in order to identify which stock should be opened on the long position and which should be opened on the short position. Our analysis is based on the assumption that the spread of a pair of correlated stocks will eventually converge. The performance metrics of our general model will serve to identify the associated risk of the trading strategy.
+Ideal results will provide information regarding which correlated stocks are diverging in order to identify which stock should be opened on the long position and which should be opened on the short position. Our analysis is based on the assumption that the spread of a pair of correlated stocks will eventually converge. 
+
+We started by pre-processing the data by taking the raw dataset which had vertically stacked close prices as shown:
 
 ## Discussion
 
