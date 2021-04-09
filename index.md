@@ -24,7 +24,7 @@ Then, we processed the data and were able to put each individual stock in time s
 
 ![Processed](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage.png)
 
-Then, we found the daily percent change which is important as we are looking for pairs of stocks that have similar percent changes day over day. Then, we applied PCA the dataset and lowered the 1259 days of closing prices for each stock down to 100 components. The results were as follows (first 9 components):
+Then, we found the daily percent change which is important as we are looking for pairs of stocks that have similar percent changes day over day. Then, we applied PCA the dataset and lowered the 1259 days of closing prices for each stock down to 100 components. The results were as follows (example of first 9 components):
 
 ![PCA](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage3.png)
 
