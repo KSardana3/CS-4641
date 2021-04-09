@@ -10,7 +10,7 @@ We aim to employ Machine Learning to find the ideal pair of stocks and predict t
 
 ## Methods
 
-Our first method OPTICS is an unsupervised method similar to DBSCAN that will result in unique clusters of high density. This will allow us to take a large random pool of stocks and cluster them. Then, we will conduct the Augmented Dickey Fuller Test (ADF) to find the cointegration between each stock in a cluster which will allow us to determine ideal pairs. Finally, we will use the LASSO regularized regression method to predict the future spread between a pair which can be used to determine the z-score to trade on.
+Chronologically, our first ML method, PCA will lower the dimensionality of the dataset by lowering the 1259 days of closing prices down to 100 principal components. Then, we will use OPTICS, which is an unsupervised method similar to DBSCAN that will result in unique clusters of high density. We picked OPTICS over DBSCAN because it can handle clusters of varying density. This method will allow us to take a large random pool of stocks and cluster them based on their daily percent change.  Then, we will conduct the Augmented Dickey Fuller Test (ADF) to find the cointegration between each stock in a cluster which will allow us to determine ideal pairs within each cluster. Finally, we conduct both LASSO and Ridge regularized regression methods to predict the future spread between an ideal pair which can be used to determine the z-score to trade on. We will compare the results of these two regression methods to determine which one will produce the best results for our pairs trading strategy.
 
 ## Results
 
@@ -19,6 +19,30 @@ Ideal results will provide information regarding which correlated stocks are div
 We started by pre-processing the data by taking the raw dataset which had vertically stacked close prices as shown:
 
 ![Pre-Processed](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage2.png)
+
+Then, we processed the data and were able to put each individual stock in time series order as shown:
+
+![Processed](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage.png)
+
+Then, we found the daily percent change which is important as we are looking for pairs of stocks that have similar percent changes day over day. Then, we applied PCA the dataset and lowered the 1259 days of closing prices for each stock down to 100 components. The results were as follows (first 9 components):
+
+![PCA](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage3.png)
+
+The next step was to cluster the stocks based on these 100 components for each stock. We applied OPTICS clustering on the algorithm in addition to DBSCAN and the results were as follows:
+
+![Clustering](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage4.png)
+
+Our next step will be to find cointegrated stocks within these clusterings using the Augmented Dickey-Fuller Test. This part has not been completed yet but will be done by the final report. The next section is about what we plan to do regarding using regression in order to predict spreads once we have found our cointegrated pair.
+
+In order to implement the ridge regression model, we chose two stocks that are known to be highly correlated: Ford and GM. Using those, we trained our Ridge regression using 4/5 of the prices of these stocks. Using these weights, we fit our model onto the testing data and plotted our results. These are shown on the figure below:
+
+![Index](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage5.png)
+
+![Index2](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage6.png)
+
+Our results are not ideal because the model only has one weight, so the regression shows a straight line as opposed to a polynomial fit. This does not accurately represent the spread between the stocks. In order to fix this, we will train the model with more features in order to generate a polynomial fit. Additionally, to find the spread between the data, we will define a spread function which will give us information about which stocks are converging and diverging.
+
+Our lasso regression implementation was similar to our ridge. We used the same GM and Ford stocks and trained our model using 4/5 of the prices of the stocks. We obtained a fit from the data, but ran into the same issues as we did with Ridge regression. We will make the same modifications that we will make for the Ridge regression.
 
 ## Discussion
 
