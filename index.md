@@ -18,7 +18,7 @@ Ideal results will provide information regarding which correlated stocks are div
 
 We started by pre-processing the data by taking the raw dataset which had vertically stacked close prices as shown:
 
-![Pre-Processed](https://drive.google.com/file/d/1OQ3yoRX1yoeJ2U01K8Qw-8tzEqZXAIID/view?usp=sharing)
+![Pre-Processed](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage2.png)
 
 ## Discussion
 
