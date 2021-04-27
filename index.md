@@ -44,7 +44,7 @@ This is an example of 3 stocks in plotted from cluster 0:
 
 Our next step will be to find cointegrated stocks within these clusterings using the Augmented Dickey-Fuller Test:
 
-![DickyCode](https://github.com/KSardana3/CS-4641/blob/gh-pages/CointegrationCode.png)
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/CointegrationCode.png" width="400" height="400"/>
 
 For each cluster, we run Dicky-Fuller Test on different pairs of stocks and look for the lowest p-value returned from the test. The two lowest p-value pairs were AIZ (Assurant) & ECL (Ecolab) and MPC (Marathon) & PRU (Prudential).
 
