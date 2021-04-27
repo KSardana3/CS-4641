@@ -34,15 +34,15 @@ We applied PCA the dataset and lowered the 1259 days of closing prices for each 
 
 The next step was to cluster the stocks based on these 300 components for each stock. We applied OPTICS clustering on the PCA result and the clustering was as follows:
 
-![Clustering](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage4.png)
+![Clustering](https://github.com/KSardana3/CS-4641/blob/gh-pages/Clustering.jpg)
 
 This is an example of 3 stocks in plotted from cluster 0:
 
-![Clustering](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage4.png)
+![ExampleStocks](https://github.com/KSardana3/CS-4641/blob/gh-pages/ExampleStocks.jpg)
 
 Our next step will be to find cointegrated stocks within these clusterings using the Augmented Dickey-Fuller Test:
 
-![Clustering](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage4.png)
+![DickyCode](https://github.com/KSardana3/CS-4641/blob/gh-pages/CointegrationCode.jpg)
 
 In order to implement the ridge regression model, we chose two stocks that are known to be highly correlated: Ford and GM. Using those, we trained our Ridge regression using 4/5 of the prices of these stocks. Using these weights, we fit our model onto the testing data and plotted our results. These are shown on the figure below:
 
