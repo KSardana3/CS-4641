@@ -56,9 +56,9 @@ We conducted our lasso linear regression on two pairs of correlated stocks. We s
 
  Lasso linear regression z-score results from the MPC (Marathon) & PRU (Prudential) pair of stocks.
 
-<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage12.png" width="700" height="410"/>
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage25.png" width="700" height="410"/>
 
-Each pair's asset value over time.
+Each pair's Testing Set Z-Score History for Lasso Regression
 
 
 We conducted our ridge regression similarly to lasso regression. We also split the data into training and testing by arbitrarily choosing 4/5 of the data for training and 1/5 for testing. We found the spread by calculating log(a) - ridge.predict(log(b)).  We found the z-score by calculating (spread - mean(spread))/(standard deviation of spread). We chose an alpha value of 1.0. We chose the best degree by calculating the error associated with each degree and then training the data again with the degree that produced the least error.  
@@ -71,9 +71,9 @@ We conducted our ridge regression similarly to lasso regression. We also split t
 
 Ridge regression z-score results from the MPC (Marathon) & PRU (Prudential) pair of stocks.
 
-<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage16.png" width="700" height="410"/>
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage26.png" width="700" height="410"/>
 
-Each pair's asset value over time.
+Each pair's Testing Set Z-Score History for Ridge Regression
 
 
 ## Results
