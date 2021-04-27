@@ -8,13 +8,7 @@ Pairs trading is an algorithmic trading strategy where trading occurs based on t
 
 We aim to employ Machine Learning to find the ideal pair of stocks and predict their future spread which we can trade upon. Predictive models in the stock market are mainly used to learn about the upcoming fluctuation of different securities. Attaining an accurate projection leads to a potential increase in return for investors. Machine Learning is useful in this context because there’s a large range of methods that have the potential to discover patterns in datasets, leading to important resolutions.
 
-## Methods
-
-Chronologically, our first ML method, PCA will lower the dimensionality of the dataset by lowering the 1259 days of closing prices down to 100 principal components. Then, we will use OPTICS, which is an unsupervised method similar to DBSCAN that will result in unique clusters of high density. We picked OPTICS over DBSCAN because it can handle clusters of varying density. This method will allow us to take a large random pool of stocks and cluster them based on their daily percent change.  Then, we will conduct the Augmented Dickey Fuller Test (ADF) to find the cointegration between each stock in a cluster which will allow us to determine ideal pairs within each cluster. Finally, we conduct both LASSO and Ridge regularized regression methods to predict the future spread between an ideal pair which can be used to determine the z-score to trade on. We will compare the results of these two regression methods to determine which one will produce the best results for our pairs trading strategy.
-
-## Results
-
-Ideal results will provide information regarding which correlated stocks are diverging in order to identify which stock should be opened on the long position and which should be opened on the short position. Our analysis is based on the assumption that the spread of a pair of correlated stocks will eventually converge. 
+## Data Collection
 
 We started by pre-processing the data by taking the raw dataset which had vertically stacked close prices as shown:
 
@@ -24,7 +18,17 @@ Then, we processed the data and were able to put each individual stock in time s
 
 ![Processed](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage.png)
 
-Then, we found the daily percent change which is important as we are looking for pairs of stocks that have similar percent changes day over day. Then, we applied PCA the dataset and lowered the 1259 days of closing prices for each stock down to 100 components. The results were as follows (example of first 9 components):
+Then, we found the daily percent change which is important as we are looking for pairs of stocks that have similar percent changes day over day.
+
+## Methods
+
+Chronologically, our first ML method, PCA will lower the dimensionality of the dataset by lowering the 1259 days of closing prices down to 100 principal components. Then, we will use OPTICS, which is an unsupervised method similar to DBSCAN that will result in unique clusters of high density. We picked OPTICS over DBSCAN because it can handle clusters of varying density. This method will allow us to take a large random pool of stocks and cluster them based on their daily percent change.  Then, we will conduct the Augmented Dickey Fuller Test (ADF) to find the cointegration between each stock in a cluster which will allow us to determine ideal pairs within each cluster. Finally, we conduct both LASSO and Ridge regularized regression methods to predict the future spread between an ideal pair which can be used to determine the z-score to trade on. We will compare the results of these two regression methods to determine which one will produce the best results for our pairs trading strategy.
+
+## Results
+
+Ideal results will provide information regarding which correlated stocks are diverging in order to identify which stock should be opened on the long position and which should be opened on the short position. Our analysis is based on the assumption that the spread of a pair of correlated stocks will eventually converge. 
+
+We applied PCA the dataset and lowered the 1259 days of closing prices for each stock down to 100 components. The results were as follows (example of first 9 components):
 
 ![PCA](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage3.png)
 
