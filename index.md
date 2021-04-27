@@ -56,7 +56,7 @@ We conducted our lasso linear regression on two pairs of correlated stocks. We s
 
  Lasso linear regression z-score results from the MPC (Marathon) & PRU (Prudential) pair of stocks.
 
-<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage25.png" width="700" height="410"/>
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage27.png" width="700" height="410"/>
 
 Each pair's Testing Set Z-Score History for Lasso Regression
 
