@@ -26,7 +26,7 @@ Chronologically, our first ML method, PCA will lower the dimensionality of the d
 
 ## Process
 
-Ideal results for the clustering will provide information regarding which correlated stocks are diverging in order to identify which stock should be opened on the long position and which should be opened on the short position. Our analysis is based on the assumption that the spread of a pair of correlated stocks will eventually converge. Therefore, by clustering based on percent changes and then looking for cointegration will guaruntee convergence to the mean spread.
+Ideal results for the clustering will provide information regarding which correlated stocks are diverging in order to identify which stock should be opened on the long position and which should be opened on the short position. Our analysis is based on the assumption that the spread of a pair of correlated stocks will eventually converge. Therefore, by clustering based on percent changes and then looking for cointegration will guarantee convergence to the mean spread.
 
 We applied PCA the dataset and lowered the 1259 days of closing prices for each stock down to 300 components. The results were as follows (example of first 9 components):
 
@@ -44,25 +44,49 @@ Our next step will be to find cointegrated stocks within these clusterings using
 
 <img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/CointegrationCode.png" width="700" height="320"/>
 
-For each cluster, we run Dicky-Fuller Test on different pairs of stocks and look for the lowest p-value returned from the test. The two lowest p-value pairs were AIZ (Assurant) & ECL (Ecolab) and MPC (Marathon) & PRU (Prudential).
+For each cluster, we run Dicky-Fuller Test on different pairs of stocks and look for the lowest p-value returned from the test. The two lowest p-value pairs were AIZ (Assurant) & ECL (Ecolab) and MPC (Marathon) & PRU (Prudential). We used these pairs in our linear regression. 
 
-In order to implement the ridge regression model, we chose two stocks that are known to be highly correlated: Ford and GM. Using those, we trained our Ridge regression using 4/5 of the prices of these stocks. Using these weights, we fit our model onto the testing data and plotted our results. These are shown on the figure below:
+We conducted our lasso linear regression on two pairs of correlated stocks. We split the data into training and testing by arbitrarily choosing 4/5 of the data for training and 1/5 for testing. We found the spread by calculating log(a) - lasso.predict(log(b)).  We found the z-score by calculating (spread - mean(spread))/(standard deviation of spread). For our Lasso regression, we used the LassoCV function of the scikit-learn library because the function cross validates alpha using the K-fold method. Additionally, we chose the best degree by calculating the error associated with each degree and then training the data again with the degree that produced the least error.  
 
-![Index](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage5.png)
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage10.png" width="400" height="250"/>
 
-![Index2](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage6.png)
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage11.png" width="400" height="250"/>
 
-Our results are not ideal because the model only has one weight, so the regression shows a straight line as opposed to a polynomial fit. This does not accurately represent the spread between the stocks. In order to fix this, we will train the model with more features in order to generate a polynomial fit. Additionally, to find the spread between the data, we will define a spread function which will give us information about which stocks are converging and diverging.
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage12.png" width="400" height="250"/>
 
-Our lasso regression implementation was similar to our ridge. We used the same GM and Ford stocks and trained our model using 4/5 of the prices of the stocks. We obtained a fit from the data, but ran into the same issues as we did with Ridge regression. We will make the same modifications that we will make for the Ridge regression.
+
+We conducted our ridge regression similarly to lasso regression. We also split the data into training and testing by arbitrarily choosing 4/5 of the data for training and 1/5 for testing. We found the spread by calculating log(a) - ridge.predict(log(b)).  We found the z-score by calculating (spread - mean(spread))/(standard deviation of spread). We chose an alpha value of 1.0. We chose the best degree by calculating the error associated with each degree and then training the data again with the degree that produced the least error.  
+
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage14.png" width="400" height="250"/>
+
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage15.png" width="400" height="250"/>
+
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage16.png" width="400" height="250"/>
+
+
+
+
 
 ## Results
+
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage13.png" width="400" height="250"/>
+
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage17.png" width="400" height="250"/>
+
+total earning ratio
+
 
 ## Discussion
 
 By utilizing  ML, investors no longer have to solely rely on regression for pair selection, and will achieve a higher return on their investment. Our model should be able to simulate mean-reverting stock pairs and differentiate them from those who have a non-stationary spread. Meaning, ML can identify stocks that do not belong to the same industry nor have similar characteristics but do have a correlation, increasing the possibility of making a profit.
 
 It will be interesting to explore the impact of selecting distinct thresholds to signal a diverging spread between identified stocks. Selecting appropriate benchmarks for spread divergence may help reduce market-risk exposure, helping small-time investors achieve a consistent return regardless of the market.
+
+## Conclusion 
+
+After seeing the results of backtesting on both LASSO and Ridge regression, we can see that both strategies yield very similar results. While the z-score results for individual pairs were different, when we aggregate the results for all pairs of stocks the return for both models is 20.2%. In the future, our next steps to improve this model would include more extensive tuning of our hyperparameters to have a more accurate regression.  
+
+
 
 ## References
 
