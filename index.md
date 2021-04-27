@@ -24,7 +24,7 @@ Then, we found the daily percent change which is important as we are looking for
 
 Chronologically, our first ML method, PCA will lower the dimensionality of the dataset by lowering the 1259 days of closing prices down to 300 principal components. Then, we will use OPTICS, which is an unsupervised method similar to DBSCAN that will result in unique clusters of high density. We picked OPTICS over DBSCAN because it can handle clusters of varying density which is one of DBSCAN's weaknesses. This method will allow us to take a large pool of stocks and cluster them based on their daily percent change.  Then, we will conduct the Augmented Dickey Fuller Test (ADF) to find the cointegration between each stock in a cluster which will allow us to determine ideal pairs within each cluster. Finally, we conducted both LASSO and Ridge regularized regression methods to predict the future spread between an ideal pair which can be used to determine the z-score to trade based upon. Utilizing the z-scores that we predicted, we backtested the pairs trading algorithm and tracked generated returns.
 
-## Results
+## Process
 
 Ideal results for the clustering will provide information regarding which correlated stocks are diverging in order to identify which stock should be opened on the long position and which should be opened on the short position. Our analysis is based on the assumption that the spread of a pair of correlated stocks will eventually converge. Therefore, by clustering based on percent changes and then looking for cointegration will guaruntee convergence to the mean spread.
 
