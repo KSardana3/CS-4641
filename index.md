@@ -44,6 +44,8 @@ Our next step will be to find cointegrated stocks within these clusterings using
 
 ![DickyCode](https://github.com/KSardana3/CS-4641/blob/gh-pages/CointegrationCode.jpg)
 
+For each cluster, we run Dicky-Fuller Test on different pairs of stocks and look for the lowest p-value returned from the test. The two lowest p-value pairs were AIZ (Assurant) & ECL (Ecolab) and MPC (Marathon) & PRU (Prudential).
+
 In order to implement the ridge regression model, we chose two stocks that are known to be highly correlated: Ford and GM. Using those, we trained our Ridge regression using 4/5 of the prices of these stocks. Using these weights, we fit our model onto the testing data and plotted our results. These are shown on the figure below:
 
 ![Index](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage5.png)
