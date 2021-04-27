@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Pairs trading is an algorithmic trading strategy where trading occurs based on the idea that pairs of securities will always revert back to their historical spread. In order to make a profit, investors go long and short during the period when the spread between these two stocks diverges. When the spread returns to its historical mean, at least one of the positions will result in a profit. Trading on pairs of stocks in the same industry is the beneficial because they will react to similar market factors, therefore, having similar price variations. Once investors identify a pair of stocks, they verify the prices of the stocks are cointegrated before trading them. Investors can trade using various statistical thresholds that will allow them to figure out if the current spread is near the historical mean spread or not.
+Pairs trading is an algorithmic trading strategy where trading occurs based on the idea that pairs of securities will always revert back to their historical spread. In order to make a profit, investors go long and short during the period when the spread between these two stocks diverges. When the spread returns to its historical mean, at least one of the positions will result in a profit. Trading on pairs of stocks in the same industry is the beneficial because they will react to similar market factors, therefore having similar price variations. Once investors identify a pair of stocks, they verify the prices of the stocks are cointegrated before trading them. Investors can trade using various statistical thresholds that will allow them to figure out if the current spread is near the historical mean spread or not.
 
 ## Problem Statement
 
@@ -50,7 +50,11 @@ We conducted our lasso linear regression on two pairs of correlated stocks. We s
 
 <img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage10.png" width="400" height="250"/>
 
+ Lasso linear regression z-score results from the AIZ (Assurant) & ECL (Ecolab) pair of stocks.
+
 <img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage11.png" width="400" height="250"/>
+
+ Lasso linear regression z-score results from the MPC (Marathon) & PRU (Prudential) pair of stocks.
 
 <img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage12.png" width="400" height="250"/>
 
@@ -59,10 +63,13 @@ We conducted our ridge regression similarly to lasso regression. We also split t
 
 <img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage14.png" width="400" height="250"/>
 
+ Ridge regression z-score results from the AIZ (Assurant) & ECL (Ecolab) pair of stocks.
+
 <img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage15.png" width="400" height="250"/>
 
-<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage16.png" width="400" height="250"/>
+Ridge regression z-score results from the MPC (Marathon) & PRU (Prudential) pair of stocks.
 
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage16.png" width="400" height="250"/>
 
 
 
@@ -72,8 +79,6 @@ We conducted our ridge regression similarly to lasso regression. We also split t
 <img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage13.png" width="400" height="250"/>
 
 <img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage17.png" width="400" height="250"/>
-
-total earning ratio
 
 
 ## Discussion
