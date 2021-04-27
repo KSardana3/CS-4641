@@ -12,7 +12,7 @@ We aim to employ Machine Learning to find the ideal pair of stocks and predict t
 
 The dataset that we chose was the stock price data from the S&P 500 from 2013 to 2018. This includes the open and close prices of the day, the high and low prices of the day, and the volume traded. However, the column that we were interested in was the close prices as we decided they would be the best data to trade upon for the algorithm. We started by pre-processing the data by taking the raw dataset which had vertically stacked datapoints as shown:
 
-![Pre-Processed](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage2.png width="200" height="200")
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage2.png" width="200" height="200"/>
 
 This was not the way we wanted the data to be formatted as we wanted to have each row show the close prices of different stocks over the five years. Therefore, we processed the data and were able to put each individual stock in time series order as shown:
 
