@@ -36,7 +36,7 @@ We applied PCA the dataset and lowered the 1259 days of closing prices for each 
 
 The next step was to cluster the stocks based on these 300 components for each stock. We applied OPTICS clustering on the PCA result and the clustering was as follows:
 
-<img src="https://github.com/KSardana3/CS-4641/blob/gh-pages/Clustering.jpg" width="500" height="350"/>
+![PCA](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/Clustering.png)
 
 This is an example of 3 stocks in plotted from cluster 0:
 
