@@ -56,7 +56,7 @@ We conducted our lasso linear regression on two pairs of correlated stocks. We s
 
  Lasso linear regression z-score results from the MPC (Marathon) & PRU (Prudential) pair of stocks.
 
-<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage12.png" width="400" height="250"/>
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage12.png" width="700" height="410"/>
 
 Each pair's asset value over time.
 
@@ -71,7 +71,7 @@ We conducted our ridge regression similarly to lasso regression. We also split t
 
 Ridge regression z-score results from the MPC (Marathon) & PRU (Prudential) pair of stocks.
 
-<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage16.png" width="400" height="250"/>
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage16.png" width="700" height="410"/>
 
 Each pair's asset value over time.
 
