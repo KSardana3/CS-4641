@@ -80,8 +80,11 @@ Each pair's asset value over time.
 
 <img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage13.png" width="400" height="250"/>
 
+Total assets over time with Lasso regression.
+
 <img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage17.png" width="400" height="250"/>
 
+Total assets over time with Ridge regression.
 
 ## Discussion
 
@@ -91,8 +94,7 @@ It will be interesting to explore the impact of selecting distinct thresholds to
 
 ## Conclusion 
 
-After seeing the results of backtesting on both LASSO and Ridge regression, we can see that both strategies yield very similar results. While the z-score results for individual pairs were different, when we aggregate the results for all pairs of stocks the return for both models is 20.2%. In the future, our next steps to improve this model would include more extensive tuning of our hyperparameters to have a more accurate regression.  
-
+After seeing the results of backtesting on both LASSO and Ridge regression, we can see that both strategies yield very similar results. While the z-score results for individual pairs were different, when we aggregate the results for all pairs of stocks the return for both models is 20.2%. In the future, our next steps to improve this model would include more extensive tuning of our hyperparameters to have a more accurate regression.
 
 
 ## References
