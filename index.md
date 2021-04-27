@@ -40,7 +40,7 @@ The next step was to cluster the stocks based on these 300 components for each s
 
 This is an example of 3 stocks in plotted from cluster 0:
 
-![ExampleStocks](https://github.com/KSardana3/CS-4641/blob/gh-pages/ExampleStocks.png)
+<img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/ExampleStocks.png"/>
 
 Our next step will be to find cointegrated stocks within these clusterings using the Augmented Dickey-Fuller Test:
 
