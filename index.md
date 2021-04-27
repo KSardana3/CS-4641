@@ -18,25 +18,31 @@ This was not the way we wanted the data to be formatted as we wanted to have eac
 
 ![Processed](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage.png)
 
-Then, we found the daily percent change which is important as we are looking for pairs of stocks that have similar percent changes day over day:
+Then, we found the daily percent change which is important as we are looking for pairs of stocks that have similar percent changes day over day which is what we pass into the PCA model.
 
 ## Methods
 
-Chronologically, our first ML method, PCA will lower the dimensionality of the dataset by lowering the 1259 days of closing prices down to 100 principal components. Then, we will use OPTICS, which is an unsupervised method similar to DBSCAN that will result in unique clusters of high density. We picked OPTICS over DBSCAN because it can handle clusters of varying density. This method will allow us to take a large random pool of stocks and cluster them based on their daily percent change.  Then, we will conduct the Augmented Dickey Fuller Test (ADF) to find the cointegration between each stock in a cluster which will allow us to determine ideal pairs within each cluster. Finally, we conduct both LASSO and Ridge regularized regression methods to predict the future spread between an ideal pair which can be used to determine the z-score to trade on. We will compare the results of these two regression methods to determine which one will produce the best results for our pairs trading strategy.
+Chronologically, our first ML method, PCA will lower the dimensionality of the dataset by lowering the 1259 days of closing prices down to 300 principal components. Then, we will use OPTICS, which is an unsupervised method similar to DBSCAN that will result in unique clusters of high density. We picked OPTICS over DBSCAN because it can handle clusters of varying density which is one of DBSCAN's weaknesses. This method will allow us to take a large pool of stocks and cluster them based on their daily percent change.  Then, we will conduct the Augmented Dickey Fuller Test (ADF) to find the cointegration between each stock in a cluster which will allow us to determine ideal pairs within each cluster.
 
 ## Results
 
-Ideal results will provide information regarding which correlated stocks are diverging in order to identify which stock should be opened on the long position and which should be opened on the short position. Our analysis is based on the assumption that the spread of a pair of correlated stocks will eventually converge. 
+Ideal results for the clustering will provide information regarding which correlated stocks are diverging in order to identify which stock should be opened on the long position and which should be opened on the short position. Our analysis is based on the assumption that the spread of a pair of correlated stocks will eventually converge. Therefore, by clustering based on percent changes and then looking for cointegration will guaruntee convergence to the mean spread.
 
-We applied PCA the dataset and lowered the 1259 days of closing prices for each stock down to 100 components. The results were as follows (example of first 9 components):
+We applied PCA the dataset and lowered the 1259 days of closing prices for each stock down to 300 components. The results were as follows (example of first 9 components):
 
 ![PCA](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage3.png)
 
-The next step was to cluster the stocks based on these 100 components for each stock. We applied OPTICS clustering on the algorithm in addition to DBSCAN and the results were as follows:
+The next step was to cluster the stocks based on these 300 components for each stock. We applied OPTICS clustering on the PCA result and the clustering was as follows:
 
 ![Clustering](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage4.png)
 
-Our next step will be to find cointegrated stocks within these clusterings using the Augmented Dickey-Fuller Test. This part has not been completed yet but will be done by the final report. The next section is about what we plan to do regarding using regression in order to predict spreads once we have found our cointegrated pair.
+This is an example of 3 stocks in plotted from cluster 0:
+
+![Clustering](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage4.png)
+
+Our next step will be to find cointegrated stocks within these clusterings using the Augmented Dickey-Fuller Test:
+
+![Clustering](https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage4.png)
 
 In order to implement the ridge regression model, we chose two stocks that are known to be highly correlated: Ford and GM. Using those, we trained our Ridge regression using 4/5 of the prices of these stocks. Using these weights, we fit our model onto the testing data and plotted our results. These are shown on the figure below:
 
