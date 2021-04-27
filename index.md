@@ -80,13 +80,11 @@ Each pair's asset value over time.
 
 <img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage13.png" width="400" height="250"/>
 
-Total assets over time with Lasso regression.
-Total return: 20.2%
+Total assets over time with Lasso regression. Total return: 20.2%
 
 <img src="https://raw.githubusercontent.com/KSardana3/CS-4641/gh-pages/GetImage17.png" width="400" height="250"/>
 
-Total assets over time with Ridge regression.
-Total return: 20.2%
+Total assets over time with Ridge regression. Total return: 20.2%
 
 ## Discussion
 
